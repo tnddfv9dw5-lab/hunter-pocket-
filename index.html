@@ -6,13 +6,14 @@
 <meta name="theme-color" content="#07110d" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<title>Hunter Pocket V4</title>
-<link rel="stylesheet" href="style.css?v=4" />
+<title>Hunter Pocket V5</title>
+<link rel="stylesheet" href="style.css?v=5" />
+<link rel="stylesheet" href="v5.css?v=5" />
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><div class="logo">↗</div><div><h1>Hunter Pocket</h1><p>Market Intelligence · Paper Bots</p></div></div>
+    <div class="brand"><div class="logo">↗</div><div><h1>Hunter Pocket</h1><p>Live Terminal · Smart Money · Paper Bots</p></div></div>
     <div class="top-actions"><span id="liveBadge" class="status-badge"><i></i><b>DÉMO</b></span><button id="settingsBtn" class="icon-btn">⚙</button></div>
   </header>
 
@@ -64,8 +65,9 @@
 
   <main id="wallet" class="view">
     <section class="section first"><div class="section-head"><div><h2>Wallet Intelligence</h2><p>Analyse d’adresses publiques, lecture seule</p></div></div>
-      <div class="warning-card"><b>Trading réel non activé</b><p>Cette version n’accepte aucun dépôt, ne conserve aucune clé privée et n’envoie aucune transaction. Les bots utilisent des données de marché réelles mais restent en paper trading. L’exécution autonome de fonds réels nécessite une infrastructure sécurisée distincte et des contrôles de dépenses.</p></div>
-      <div class="roadmap-card"><h3>Fonctions déjà actives</h3><div class="roadmap-list"><span>✓ Scanner Solana / Robinhood / Base / Ethereum / BSC / Arbitrum</span><span>✓ Memecoins DexScreener en direct</span><span>✓ Bots multiples avec choix de risque, chaînes et whitelist</span><span>✓ Suivi lecture seule de wallets publics</span><span>✓ Actualités et signaux sociaux publics</span><span>◌ Indexeur P&L historique avancé via backend sécurisé</span></div></div>
+      <div class="warning-card"><b>Fonds réels verrouillés</b><p>Hunter V5 analyse les marchés et exécute les stratégies en paper trading. Il ne collecte pas de dépôt et ne transmet pas d’ordre réel : aucune clé privée ni adresse de dépôt custodiale n’est placée dans cette page publique.</p></div>
+      <div class="funding-grid"><div class="fund-option"><span>₿</span><b>Dépôt crypto</b><p>Architecture prévue : wallet non-custodial + backend signé + limites de dépenses.</p><em>Backend sécurisé requis</em></div><div class="fund-option"><span>€</span><b>Carte / SEPA</b><p>Architecture prévue : prestataire réglementé, vérifications et webhook serveur.</p><em>Prestataire/KYC requis</em></div></div>
+      <div class="roadmap-card"><h3>Hunter V5</h3><div class="roadmap-list"><span>✓ Scanner Solana / Robinhood / Base / Ethereum / BSC / Arbitrum</span><span>✓ Plus de memecoins via DexScreener Top + Latest</span><span>✓ Raccourcis GMGN par contrat compatible</span><span>✓ Chandelles OHLCV réelles GeckoTerminal + graphiques live</span><span>✓ Points BUY/SELL des bots sur le graphique</span><span>✓ Bots multiples avec risque, chaînes et whitelist</span><span>✓ Activité récente des wallets publics suivis</span><span>✓ Sources smart-money / social proposées</span><span>◌ P&L wallet décodé et exécution fonds réels : backend sécurisé requis</span></div></div>
     </section>
   </main>
 </div>
@@ -93,5 +95,5 @@
   <button id="resetAppBtn" class="danger-btn full">Réinitialiser les données locales</button>
 </div></div>
 <div id="toast" class="toast"></div>
-<script src="app-v4.js?v=4"></script>
+<script src="app-v5.js?v=5"></script>
 </body></html>
