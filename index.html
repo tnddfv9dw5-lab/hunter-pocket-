@@ -1,38 +1,97 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#07100d">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Hunter Pocket</title>
-<style>
-:root{--bg:#050806;--card:#0b120f;--card2:#101914;--line:#1b2a22;--txt:#f3f8f5;--mut:#819087;--green:#22d67a;--red:#ff6070;--amber:#ffc95f;--blue:#78aaff}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}body{min-height:100vh;background:radial-gradient(750px 320px at 85% -8%,rgba(34,214,122,.13),transparent 60%),linear-gradient(#07100d 0,#050806 38%);padding:env(safe-area-inset-top) 0 calc(86px + env(safe-area-inset-bottom))}button,input{font:inherit}.app{max-width:580px;margin:auto;padding:12px 14px 30px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.brand{display:flex;gap:10px;align-items:center}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(145deg,#2ce689,#0a8849);display:grid;place-items:center;font-size:23px;box-shadow:0 12px 30px rgba(34,214,122,.17)}.brand h1{margin:0;font-size:18px}.brand p{margin:2px 0 0;color:var(--mut);font-size:10px}.iconBtn{width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:#0d1511;color:#bac7c0}.card,.panel,.list{background:linear-gradient(155deg,var(--card2),#09110d);border:1px solid var(--line);border-radius:22px;box-shadow:0 16px 44px rgba(0,0,0,.2)}.portfolio{padding:16px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.eyebrow{font-size:11px;color:#9ba9a1}.badge{display:flex;align-items:center;gap:6px;border:1px solid #284132;border-radius:999px;padding:5px 8px;font-size:9px;color:#b7c9bf}.dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}.dot.live{background:var(--green)}.balance{font-size:37px;font-weight:800;letter-spacing:-1.4px;margin:7px 0 2px}.perf{font-size:10px;color:var(--mut)}.perf strong{margin-left:6px}.up{color:var(--green)!important}.down{color:var(--red)!important}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.metric{padding:9px;background:#08100c;border:1px solid var(--line);border-radius:12px}.metric span{display:block;font-size:8px;color:var(--mut)}.metric strong{display:block;font-size:12px;margin-top:3px}.section{margin-top:18px}.head{display:flex;justify-content:space-between;align-items:center;margin:0 2px 9px}.head h2{margin:0;font-size:15px}.hint{border:0;background:none;color:var(--mut);font-size:10px}.marketHero{padding:15px}.assetTitle{display:flex;align-items:center;gap:10px}.coin{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#0f1b16;border:1px solid #26372e;font-size:10px;font-weight:800}.coin.spec{background:#211a0d;border-color:#403116;color:#ffd77f}.assetTitle strong{display:block;font-size:14px}.assetTitle span{display:block;font-size:9px;color:var(--mut);margin-top:2px}.heroPrice{text-align:right}.heroPrice strong{display:block;font-size:18px}.heroPrice span{display:block;font-size:10px;margin-top:2px}.chart{height:150px;margin-top:12px}.chart svg{width:100%;height:100%;overflow:visible}.chartMeta{display:flex;justify-content:space-between;color:var(--mut);font-size:8px;margin-top:2px}.panel{padding:14px}.pilotTitle{display:flex;align-items:center;gap:10px}.bolt{width:38px;height:38px;border-radius:13px;background:#10271b;color:var(--green);display:grid;place-items:center;font-size:18px}.pilotTitle strong{font-size:13px}.pilotTitle span{display:block;font-size:9px;color:var(--mut);margin-top:2px}.switch{width:49px;height:29px;border-radius:999px;border:1px solid #29372f;background:#1a241f;padding:3px}.switch i{display:block;width:21px;height:21px;border-radius:50%;background:#89948e;transition:.2s}.switch.on{background:#0f633a;border-color:#19804d}.switch.on i{transform:translateX(20px);background:#fff}.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.preset{padding:9px 4px;border-radius:11px;border:1px solid var(--line);background:#0b120f;color:#91a097;font-size:10px}.preset.active{background:#10251a;border-color:#22784d;color:#e0f8e9}.rules{font-size:9px;line-height:1.5;color:var(--mut);margin-top:10px}.list{overflow:hidden}.marketRow{display:grid;grid-template-columns:1.15fr .9fr 72px;gap:8px;align-items:center;padding:12px;border-bottom:1px solid var(--line);cursor:pointer}.marketRow:last-child,.position:last-child,.activity:last-child{border-bottom:0}.coinWrap{display:flex;gap:9px;align-items:center;min-width:0}.sym{font-size:12px;font-weight:800}.name{font-size:8px;color:var(--mut);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.price{text-align:right;font-size:11px;font-weight:700}.change{text-align:right;font-size:9px;font-weight:700;margin-top:3px}.miniChart{height:34px}.miniChart svg{width:100%;height:100%}.score{font-size:8px;color:var(--mut);margin-top:3px;text-align:right}.position{padding:12px;border-bottom:1px solid var(--line)}.pill{font-size:8px;padding:4px 6px;border:1px solid #26362e;border-radius:999px;color:#9daaa3}.small{font-size:8px;color:var(--mut);margin-top:4px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}.stat{padding:8px;border:1px solid var(--line);border-radius:10px;background:#08100c}.stat span{display:block;font-size:8px;color:var(--mut)}.stat strong{display:block;font-size:10px;margin-top:3px}.close{width:100%;margin-top:8px;padding:9px;border:1px solid #2a3931;border-radius:10px;background:#151e19;color:#cad5cf;font-size:10px}.empty{text-align:center;padding:24px 16px}.empty strong{display:block;font-size:12px}.empty span{display:block;font-size:9px;color:var(--mut);margin-top:4px}.activity{display:grid;grid-template-columns:34px 1fr auto;gap:8px;align-items:center;padding:11px 12px;border-bottom:1px solid var(--line)}.actIcon{width:34px;height:34px;border-radius:11px;background:#111a16;display:grid;place-items:center}.actTitle{font-size:10px;font-weight:700}.actSub,.actTime{font-size:8px;color:var(--mut);margin-top:2px}.view{display:none}.view.active{display:block}.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(6,10,8,.94);backdrop-filter:blur(18px);border-top:1px solid #17221c;padding:8px 8px calc(8px + env(safe-area-inset-bottom));z-index:20}.navInner{max-width:580px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}.navBtn{border:0;background:none;color:#69766f;font-size:9px;padding:4px}.navBtn strong{display:block;font-size:18px;line-height:20px}.navBtn.active{color:var(--green)}.modalBack{position:fixed;inset:0;background:#0009;display:none;align-items:flex-end;z-index:30}.modalBack.show{display:flex}.modal{width:100%;max-width:580px;margin:auto;background:#0b120f;border:1px solid #1f2d25;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}.modal h3{margin:0;font-size:15px}.modal p{font-size:9px;color:var(--mut);line-height:1.5}.field{margin-top:12px}.field label{display:block;font-size:9px;color:var(--mut);margin-bottom:5px}.field input{width:100%;padding:11px;border-radius:11px;border:1px solid #25342c;background:#08100c;color:#fff}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.buttons button{padding:10px;border-radius:11px;border:1px solid #26362e}.danger{background:#211015;color:#ff9aa5}.secondary{background:#131c17;color:#cbd4cf}.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(10px);opacity:0;transition:.2s;background:#111a16;border:1px solid #26362e;color:#e9f2ed;padding:9px 12px;border-radius:11px;font-size:9px;z-index:40}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-</style>
-</head><body>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#07110d" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>Hunter Pocket V4</title>
+<link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body>
 <div class="app">
-  <div class="top"><div class="brand"><div class="logo">↗</div><div><h1>Hunter Pocket</h1><p>Paper trading · données crypto live</p></div></div><button id="settingsBtn" class="iconBtn">⚙</button></div>
+  <header class="topbar">
+    <div class="brand"><div class="logo">↗</div><div><h1>Hunter Pocket</h1><p>Market Intelligence · Paper Bots</p></div></div>
+    <div class="top-actions"><span id="liveBadge" class="status-badge"><i></i><b>DÉMO</b></span><button id="settingsBtn" class="icon-btn">⚙</button></div>
+  </header>
 
-  <main id="home" class="view active">
-    <section class="card portfolio"><div class="row eyebrow"><span>Portefeuille virtuel</span><span class="badge"><i id="statusDot" class="dot"></i><span id="statusText">CHARGEMENT</span></span></div><div id="equity" class="balance">100,00 €</div><div class="perf">Performance <strong id="pnl">0,00 € (0,00 %)</strong></div><div class="metrics"><div class="metric"><span>Cash</span><strong id="cash">100,00 €</strong></div><div class="metric"><span>Exposition</span><strong id="exposure">0,00 €</strong></div><div class="metric"><span>Trades</span><strong id="trades">0</strong></div></div></section>
+  <main id="dashboard" class="view active">
+    <section class="portfolio-card">
+      <div class="row"><div><span class="eyebrow">Capital paper global</span><div id="globalEquity" class="big-number">100,00 €</div></div><button id="refreshBtn" class="soft-btn">Actualiser</button></div>
+      <div id="globalPnl" class="pnl-line">0,00 € (0,00 %)</div>
+      <div class="mini-grid"><div><span>Cash</span><b id="globalCash">100,00 €</b></div><div><span>Exposition</span><b id="globalExposure">0,00 €</b></div><div><span>Bots actifs</span><b id="activeBots">0</b></div><div><span>Positions</span><b id="positionTotal">0</b></div></div>
+    </section>
 
-    <section class="section"><div class="head"><h2>Marché sélectionné</h2><span id="source" class="hint">—</span></div><div class="card marketHero"><div class="row"><div class="assetTitle"><div id="heroCoin" class="coin">BTC</div><div><strong id="heroName">Bitcoin</strong><span id="heroRange">Courbe 7 jours</span></div></div><div class="heroPrice"><strong id="heroPrice">—</strong><span id="heroChange">—</span></div></div><div class="chart"><svg id="marketChart" viewBox="0 0 360 150" preserveAspectRatio="none"></svg></div><div class="chartMeta"><span id="chartLow">Bas —</span><span id="chartHigh">Haut —</span></div></div></section>
+    <section class="section">
+      <div class="section-head"><div><h2>Radar marché</h2><p id="marketSource">Chargement…</p></div><div class="chips"><button class="chip active" data-marketfilter="all">Tout</button><button class="chip" data-marketfilter="majors">Majors</button><button class="chip" data-marketfilter="memes">Memes</button></div></div>
+      <div id="featuredAsset" class="asset-detail"></div>
+      <div id="marketList" class="market-list"></div>
+    </section>
 
-    <section class="section"><div class="head"><h2>Auto Pilot</h2><span id="botState" class="hint">arrêté</span></div><div class="panel"><div class="row"><div class="pilotTitle"><div class="bolt">⚡</div><div><strong>Moteur automatique</strong><span>paper trading : entrées, stops et objectifs simulés</span></div></div><button id="botSwitch" class="switch"><i></i></button></div><div class="presets"><button class="preset" data-risk="safe">Prudent</button><button class="preset active" data-risk="balanced">Équilibré</button><button class="preset" data-risk="aggressive">Agressif</button></div><div id="rules" class="rules"></div></div></section>
-
-    <section class="section"><div class="head"><h2>Cryptos suivies</h2><button id="refreshBtn" class="hint">Actualiser</button></div><div id="topMarkets" class="list"></div></section>
+    <section class="section">
+      <div class="section-head"><div><h2>Signaux chauds</h2><p>Volume, momentum, liquidité, activité & social</p></div></div>
+      <div id="hotSignals" class="signal-grid"></div>
+    </section>
   </main>
 
-  <main id="markets" class="view"><section><div class="head"><h2>Tous les marchés</h2><span id="marketSource" class="hint">—</span></div><div id="allMarkets" class="list"></div></section></main>
-  <main id="positions" class="view"><section><div class="head"><h2>Positions</h2><span id="positionCount" class="hint">0 ouverte</span></div><div id="positionsList" class="list"></div></section></main>
-  <main id="activity" class="view"><section><div class="head"><h2>Activité</h2><button id="clearLogBtn" class="hint">Effacer</button></div><div id="activityList" class="list"></div></section></main>
+  <main id="scanner" class="view">
+    <section class="section first"><div class="section-head"><div><h2>Scanner multi-chain</h2><p>DexScreener boosts + marché live</p></div><button id="reloadDexBtn" class="soft-btn">Scanner</button></div>
+      <div class="filter-panel">
+        <div class="filter-label">Chaînes</div>
+        <div id="chainFilters" class="chips wrap"></div>
+        <div class="filter-label">Recherche token / contrat</div>
+        <div class="search-row"><input id="tokenSearch" placeholder="ex. CASHCAT, BONK, 0x…"/><button id="searchTokenBtn" class="primary-btn">Chercher</button></div>
+      </div>
+      <div id="dexList" class="market-list"></div>
+    </section>
+  </main>
+
+  <main id="bots" class="view">
+    <section class="section first"><div class="section-head"><div><h2>Mes bots</h2><p>Plusieurs stratégies paper en parallèle</p></div><button id="newBotBtn" class="primary-btn">+ Bot</button></div>
+      <div id="botsList"></div>
+    </section>
+  </main>
+
+  <main id="intel" class="view">
+    <section class="section first"><div class="section-head"><div><h2>Market Intelligence</h2><p>Actualités + social heat + wallets suivis</p></div><button id="refreshIntelBtn" class="soft-btn">Actualiser</button></div>
+      <div class="intel-tabs"><button class="intel-tab active" data-inteltab="news">Actualités</button><button class="intel-tab" data-inteltab="wallets">Wallets</button><button class="intel-tab" data-inteltab="social">Social</button></div>
+      <div id="newsPanel" class="intel-panel active"><div id="newsList" class="news-list"></div></div>
+      <div id="walletsPanel" class="intel-panel"><div class="row wallet-head"><span class="muted">Score d'activité ≠ rentabilité vérifiée</span><button id="addWalletBtn" class="primary-btn">+ Wallet</button></div><div id="walletList"></div></div>
+      <div id="socialPanel" class="intel-panel"><div id="socialList" class="market-list"></div></div>
+    </section>
+  </main>
+
+  <main id="wallet" class="view">
+    <section class="section first"><div class="section-head"><div><h2>Wallet Intelligence</h2><p>Analyse d’adresses publiques, lecture seule</p></div></div>
+      <div class="warning-card"><b>Trading réel non activé</b><p>Cette version n’accepte aucun dépôt, ne conserve aucune clé privée et n’envoie aucune transaction. Les bots utilisent des données de marché réelles mais restent en paper trading. L’exécution autonome de fonds réels nécessite une infrastructure sécurisée distincte et des contrôles de dépenses.</p></div>
+      <div class="roadmap-card"><h3>Fonctions déjà actives</h3><div class="roadmap-list"><span>✓ Scanner Solana / Robinhood / Base / Ethereum / BSC / Arbitrum</span><span>✓ Memecoins DexScreener en direct</span><span>✓ Bots multiples avec choix de risque, chaînes et whitelist</span><span>✓ Suivi lecture seule de wallets publics</span><span>✓ Actualités et signaux sociaux publics</span><span>◌ Indexeur P&L historique avancé via backend sécurisé</span></div></div>
+    </section>
+  </main>
 </div>
 
-<nav class="nav"><div class="navInner"><button class="navBtn active" data-view="home"><strong>⌂</strong>Accueil</button><button class="navBtn" data-view="markets"><strong>⌁</strong>Marchés</button><button class="navBtn" data-view="positions"><strong>◎</strong>Positions</button><button class="navBtn" data-view="activity"><strong>☰</strong>Activité</button></div></nav>
+<nav class="bottom-nav"><button class="nav-btn active" data-view="dashboard"><b>⌂</b><span>Accueil</span></button><button class="nav-btn" data-view="scanner"><b>⌁</b><span>Scanner</span></button><button class="nav-btn" data-view="bots"><b>⚡</b><span>Bots</span></button><button class="nav-btn" data-view="intel"><b>◎</b><span>Intel</span></button><button class="nav-btn" data-view="wallet"><b>◇</b><span>Wallet</span></button></nav>
 
-<div id="settingsModal" class="modalBack"><div class="modal"><div class="row"><h3>Réglages simulation</h3><button id="closeModal" class="iconBtn">×</button></div><p>Cette version reste en paper trading. Aucun argent réel n'est envoyé et aucun ordre n'est transmis à un exchange.</p><div class="field"><label>Capital virtuel (€)</label><input id="capitalInput" type="number" min="20" max="100000" value="100"></div><div class="buttons"><button id="resetBtn" class="danger">Réinitialiser</button><button id="closeModal2" class="secondary">Fermer</button></div></div></div>
+<div id="botModal" class="modal-back"><div class="modal"><div class="row"><h3>Nouveau bot</h3><button class="icon-btn" data-closemodal="botModal">×</button></div>
+  <label>Nom<input id="botName" value="Hunter #1" /></label>
+  <div class="form-grid"><label>Capital paper (€)<input id="botBudget" type="number" min="20" max="100000" value="100" /></label><label>Risque<select id="botRisk"><option value="safe">Prudent</option><option value="balanced" selected>Équilibré</option><option value="aggressive">Agressif</option></select></label></div>
+  <label>Univers<select id="botUniverse"><option value="all">Tout le marché</option><option value="majors">Majors uniquement</option><option value="memes">Memecoins uniquement</option></select></label>
+  <label>Chaînes (choix multiple)<div id="botChainChoices" class="checks"></div></label>
+  <label>Whitelist facultative<input id="botWhitelist" placeholder="BTC,SOL ou CASHCAT,BONK"/><small>Si rempli, le bot ne trade que ces symboles.</small></label>
+  <button id="createBotBtn" class="primary-btn full">Créer le bot</button>
+</div></div>
+
+<div id="walletModal" class="modal-back"><div class="modal"><div class="row"><h3>Suivre un wallet</h3><button class="icon-btn" data-closemodal="walletModal">×</button></div>
+  <label>Nom<input id="watchWalletName" placeholder="Smart Wallet #1" /></label>
+  <label>Réseau<select id="watchWalletChain"><option value="robinhood">Robinhood</option><option value="base">Base</option><option value="ethereum">Ethereum</option><option value="arbitrum">Arbitrum</option><option value="solana">Solana</option></select></label>
+  <label>Adresse<input id="watchWalletAddress" placeholder="0x… ou adresse Solana" /></label>
+  <button id="saveWalletBtn" class="primary-btn full">Ajouter au suivi</button>
+</div></div>
+
+<div id="settingsModal" class="modal-back"><div class="modal"><div class="row"><h3>Réglages</h3><button class="icon-btn" data-closemodal="settingsModal">×</button></div>
+  <p class="muted">Le score Hunter est un score de signal interne, pas une probabilité garantie de gain.</p>
+  <button id="resetAppBtn" class="danger-btn full">Réinitialiser les données locales</button>
+</div></div>
 <div id="toast" class="toast"></div>
-<script src="app.js?v=3"></script>
+<script src="app-v4.js?v=4"></script>
 </body></html>
