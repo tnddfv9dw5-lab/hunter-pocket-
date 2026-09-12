@@ -6,14 +6,15 @@
 <meta name="theme-color" content="#07110d" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<title>Hunter Pocket V5</title>
-<link rel="stylesheet" href="style.css?v=5" />
-<link rel="stylesheet" href="v5.css?v=5" />
+<title>Hunter Pocket V6</title>
+<link rel="stylesheet" href="style.css?v=6" />
+<link rel="stylesheet" href="v5.css?v=6" />
+<link rel="stylesheet" href="v6.css?v=6" />
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><div class="logo">↗</div><div><h1>Hunter Pocket</h1><p>Live Terminal · Smart Money · Paper Bots</p></div></div>
+    <div class="brand"><div class="logo">↗</div><div><h1>Hunter Pocket</h1><p>Live Terminal · Smart Money · Paper Bots V6</p></div></div>
     <div class="top-actions"><span id="liveBadge" class="status-badge"><i></i><b>DÉMO</b></span><button id="settingsBtn" class="icon-btn">⚙</button></div>
   </header>
 
@@ -49,7 +50,7 @@
   </main>
 
   <main id="bots" class="view">
-    <section class="section first"><div class="section-head"><div><h2>Mes bots</h2><p>Plusieurs stratégies paper en parallèle</p></div><button id="newBotBtn" class="primary-btn">+ Bot</button></div>
+    <section class="section first"><div class="section-head"><div><h2>Mes bots</h2><p>Positions, achats, ventes, TP/SL et journal live</p></div><button id="newBotBtn" class="primary-btn">+ Bot</button></div>
       <div id="botsList"></div>
     </section>
   </main>
@@ -64,10 +65,10 @@
   </main>
 
   <main id="wallet" class="view">
-    <section class="section first"><div class="section-head"><div><h2>Wallet Intelligence</h2><p>Analyse d’adresses publiques, lecture seule</p></div></div>
-      <div class="warning-card"><b>Fonds réels verrouillés</b><p>Hunter V5 analyse les marchés et exécute les stratégies en paper trading. Il ne collecte pas de dépôt et ne transmet pas d’ordre réel : aucune clé privée ni adresse de dépôt custodiale n’est placée dans cette page publique.</p></div>
-      <div class="funding-grid"><div class="fund-option"><span>₿</span><b>Dépôt crypto</b><p>Architecture prévue : wallet non-custodial + backend signé + limites de dépenses.</p><em>Backend sécurisé requis</em></div><div class="fund-option"><span>€</span><b>Carte / SEPA</b><p>Architecture prévue : prestataire réglementé, vérifications et webhook serveur.</p><em>Prestataire/KYC requis</em></div></div>
-      <div class="roadmap-card"><h3>Hunter V5</h3><div class="roadmap-list"><span>✓ Scanner Solana / Robinhood / Base / Ethereum / BSC / Arbitrum</span><span>✓ Plus de memecoins via DexScreener Top + Latest</span><span>✓ Raccourcis GMGN par contrat compatible</span><span>✓ Chandelles OHLCV réelles GeckoTerminal + graphiques live</span><span>✓ Points BUY/SELL des bots sur le graphique</span><span>✓ Bots multiples avec risque, chaînes et whitelist</span><span>✓ Activité récente des wallets publics suivis</span><span>✓ Sources smart-money / social proposées</span><span>◌ P&L wallet décodé et exécution fonds réels : backend sécurisé requis</span></div></div>
+    <section class="section first"><div class="section-head"><div><h2>Wallet Intelligence</h2><p>Connexion et analyse en lecture seule</p></div></div>
+      <div class="warning-card"><b>Trading réel non activé</b><p>Hunter V6 peut connecter Phantom pour lire l’adresse publique et le solde, mais ne demande aucune seed phrase et ne signe aucune transaction. Les bots restent en paper trading. Les clés GMGN et l’exécution réelle doivent être isolées dans un backend sécurisé.</p></div>
+      <div class="funding-grid"><div class="fund-option"><span>👻</span><b>Phantom lecture seule</b><p>Adresse publique + solde. Aucun ordre et aucune autorisation de dépense.</p><em>Connexion locale sécurisée</em></div><div class="fund-option"><span>G</span><b>GMGN API</b><p>Architecture prévue : API officielle en lecture seule côté serveur pour Smart Money, P&L et signaux.</p><em>Backend requis</em></div></div>
+      <div class="roadmap-card"><h3>Hunter V6</h3><div class="roadmap-list"><span>✓ Scanner Solana / Robinhood / Base / Ethereum / BSC / Arbitrum</span><span>✓ Memecoins DexScreener Top + Latest</span><span>✓ Raccourcis GMGN par contrat compatible</span><span>✓ Chandelles OHLCV + graphique plein écran au clic</span><span>✓ Points BUY/SELL des bots sur les chandelles</span><span>✓ Journal live des bots : achats, ventes, TP, SL, sorties</span><span>✓ Modes Moonshot +100% / +1000% en paper trading</span><span>✓ Logos des actifs quand la source les fournit</span><span>✓ Connexion Phantom en lecture seule</span><span>✓ Résumés Wallet / News / Social plus lisibles</span><span>◌ P&L Smart Money complet GMGN : backend read-only à connecter</span><span>◌ Exécution réelle : non activée dans la page publique</span></div></div>
     </section>
   </main>
 </div>
@@ -76,7 +77,7 @@
 
 <div id="botModal" class="modal-back"><div class="modal"><div class="row"><h3>Nouveau bot</h3><button class="icon-btn" data-closemodal="botModal">×</button></div>
   <label>Nom<input id="botName" value="Hunter #1" /></label>
-  <div class="form-grid"><label>Capital paper (€)<input id="botBudget" type="number" min="20" max="100000" value="100" /></label><label>Risque<select id="botRisk"><option value="safe">Prudent</option><option value="balanced" selected>Équilibré</option><option value="aggressive">Agressif</option></select></label></div>
+  <div class="form-grid"><label>Capital paper (€)<input id="botBudget" type="number" min="20" max="100000" value="100" /></label><label>Risque<select id="botRisk"><option value="safe">Prudent</option><option value="balanced" selected>Équilibré</option><option value="aggressive">Agressif</option><option value="moonshot100">Moonshot +100%</option><option value="moonshot1000">Moonshot +1000%</option></select></label></div>
   <label>Univers<select id="botUniverse"><option value="all">Tout le marché</option><option value="majors">Majors uniquement</option><option value="memes">Memecoins uniquement</option></select></label>
   <label>Chaînes (choix multiple)<div id="botChainChoices" class="checks"></div></label>
   <label>Whitelist facultative<input id="botWhitelist" placeholder="BTC,SOL ou CASHCAT,BONK"/><small>Si rempli, le bot ne trade que ces symboles.</small></label>
@@ -91,9 +92,9 @@
 </div></div>
 
 <div id="settingsModal" class="modal-back"><div class="modal"><div class="row"><h3>Réglages</h3><button class="icon-btn" data-closemodal="settingsModal">×</button></div>
-  <p class="muted">Le score Hunter est un score de signal interne, pas une probabilité garantie de gain.</p>
+  <p class="muted">Le score Hunter est un score de signal interne, pas une probabilité garantie de gain. Les modes Moonshot augmentent fortement le risque de perte.</p>
   <button id="resetAppBtn" class="danger-btn full">Réinitialiser les données locales</button>
 </div></div>
 <div id="toast" class="toast"></div>
-<script src="app-v5.js?v=5"></script>
+<script src="bootstrap-v6.js?v=6"></script>
 </body></html>
