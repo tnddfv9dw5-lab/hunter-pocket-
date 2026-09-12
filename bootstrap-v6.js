@@ -8,6 +8,7 @@
     const neu="const RISK={safe:{entry:82,max:2,sl:-.055,tp:.09,size:.12,label:'Prudent'},balanced:{entry:74,max:4,sl:-.085,tp:.16,size:.16,label:'Équilibré'},aggressive:{entry:66,max:6,sl:-.13,tp:.28,size:.22,label:'Agressif'},moonshot100:{entry:60,max:5,sl:-.22,tp:1,size:.08,label:'Moonshot +100%'},moonshot1000:{entry:55,max:7,sl:-.30,tp:10,size:.05,label:'Moonshot +1000%'}};";
     if(!code.includes(old))throw new Error('risk patch not found');
     code=code.replace(old,neu);
+    code=code.replace("const GMGN_CHAIN={solana:'sol',robinhood:'robinhood',base:'base',ethereum:'eth',bsc:'bsc'};","const GMGN_CHAIN={solana:'sol',base:'base',ethereum:'eth',bsc:'bsc'};");
     code=code.replace("name:x.name||x.symbol,chain:'multi'","name:x.name||x.symbol,image:x.image||'',chain:'multi'");
     code=code.replace("name:b.name||b.symbol||'Token',chain:pair.chainId||'unknown'","name:b.name||b.symbol||'Token',image:info.imageUrl||'',chain:pair.chainId||'unknown'");
     const end='\n})();';
